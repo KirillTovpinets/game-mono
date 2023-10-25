@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { FunctionComponent } from "react";
-import SnakeApp from "snake-game";
-import layout from "../layout.module.css";
+import React, { FunctionComponent } from 'react';
+import SnakeGame from 'snake-game';
+import layout from '../layout.module.css';
 interface PageProps {}
 
 const Page: FunctionComponent<PageProps> = () => {
   return (
     <div className={layout.snakeContainer}>
-      <SnakeApp />
+      <SnakeGame />
     </div>
   );
 };

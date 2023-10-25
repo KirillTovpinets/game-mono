@@ -1,0 +1,18 @@
+[submodule "packages/match-match-game"]
+  path = packages/match-match-game
+  url = https://github.com/KirillTovpinets/match-match-game
+
+[submodule "packages/snake-game"]
+  path = packages/snake-game
+  url = https://github.com/KirillTovpinets/snake-game
+
+[submodule "packages/tetris-game"]
+  path = packages/tetris-game
+  url = https://github.com/KirillTovpinets/tetris-game
+
+[submodule "packages/tic-tac-toe"]
+  path = packages/tic-tac-toe
+  url = https://github.com/KirillTovpinets/tic-tac-toe
+[submodule "packages/2048-game"]
+	path = packages/2048-game
+	url = https://github.com/KirillTovpinets/2048-game
