@@ -1,16 +1,15 @@
 'use client';
 
-import React, { FunctionComponent } from 'react';
+import type { ReactElement } from 'react';
 import SnakeGame from 'snake-game';
 import layout from '../layout.module.css';
-interface PageProps {}
 
-const Page: FunctionComponent<PageProps> = () => {
+function Page(): ReactElement {
   return (
     <div className={layout.snakeContainer}>
       <SnakeGame />
     </div>
   );
-};
+}
 
 export default Page;

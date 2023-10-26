@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppLink from './components/AppLink';
+import AppLink from './components/app-link';
 import './globals.css';
 import layout from './layout.module.css';
 

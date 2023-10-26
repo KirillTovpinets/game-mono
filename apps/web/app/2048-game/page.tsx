@@ -2,9 +2,7 @@
 import Game2048 from '2048-game';
 import type { FunctionComponent } from 'react';
 
-interface PageProps {}
-
-const Page: FunctionComponent<PageProps> = () => {
+const Page: FunctionComponent = () => {
   return (
     <div>
       <Game2048 />

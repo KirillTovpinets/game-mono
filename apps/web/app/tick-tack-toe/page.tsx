@@ -1,15 +1,14 @@
-"use client";
-import { FunctionComponent } from "react";
-import TicTacToe from "tic-tac-toe";
-import layout from "../layout.module.css";
-interface PageProps {}
+'use client';
+import type { ReactElement } from 'react';
+import TicTacToe from 'tic-tac-toe';
+import layout from '../layout.module.css';
 
-const Page: FunctionComponent<PageProps> = () => {
+function Page(): ReactElement {
   return (
     <div className={layout.tickTackToe}>
       <TicTacToe />
     </div>
   );
-};
+}
 
 export default Page;
