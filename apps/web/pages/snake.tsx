@@ -1,8 +1,7 @@
-'use client';
-
-import type { ReactElement } from 'react';
-import SnakeGame from 'snake-game';
-import layout from '../layout.module.css';
+"use client";
+import type { ReactElement } from "react";
+import SnakeGame from "snake-game";
+import layout from "../styles/layout.module.css";
 
 function Page(): ReactElement {
   return (

@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import type { PropsWithChildren, ReactElement } from 'react';
-import layout from '../layout.module.css';
+import Link from "next/link";
+import type { PropsWithChildren, ReactElement } from "react";
+import layout from "../styles/layout.module.css";
 
 interface AppLinkProps extends PropsWithChildren {
   href: string;

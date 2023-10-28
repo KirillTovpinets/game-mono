@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "2048-game": "workspace:*",
+    "@module-federation/nextjs-mf": "^7.0.8",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*",
-    "tetris-game": "workspace:*",
     "snake-game": "workspace:*",
+    "tetris-game": "workspace:*",
     "tic-tac-toe": "workspace:*",
-    "2048-game": "workspace:*"
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
