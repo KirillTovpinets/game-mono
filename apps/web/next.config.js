@@ -45,6 +45,8 @@ module.exports = {
       })
     );
 
+    config.optimization.splitChunks = false;
+
     return config;
   },
 };
