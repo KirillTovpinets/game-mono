@@ -1,17 +1,18 @@
-const NextFederationPlugin = require("@module-federation/nextjs-mf");
+const NextFederationPlugin = require('@module-federation/nextjs-mf');
 
 module.exports = {
   reactStrictMode: true,
   transpilePackages: [
-    "ui",
-    "tetris-game",
-    "snake-game",
-    "tic-tac-toe",
-    "2048-game",
+    'ui',
+    'tetris-game',
+    'snake-game',
+    'tic-tac-toe',
+    '2048-game',
   ],
+
   webpack(config, options) {
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+      rule.test?.test?.('.svg')
     );
 
     config.module.rules.push(
@@ -24,7 +25,7 @@ module.exports = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ },
-        use: ["@svgr/webpack"],
+        use: ['@svgr/webpack'],
       }
     );
 
@@ -32,24 +33,17 @@ module.exports = {
 
     config.plugins.push(
       new NextFederationPlugin({
-        name: "portfolio",
-        filename: "static/chunks/remoteEntry.js",
-        exposes: {
-          "./welcome": "./pages/index.tsx",
-          "./2048": "./pages/2048-game.tsx",
-          "./snake": "./pages/snake.tsx",
-          "./tetris": "./pages/tetris.tsx",
-          "./tic-tac-toe": "./pages/tick-tack-toe.tsx",
+        name: 'portfolio',
+        output: {
+          publicPath: 'auto',
         },
-        shared: {
-          "react-dom": {
-            eager: false,
-            singleton: true,
-          },
-          react: {
-            eager: false,
-            singleton: true,
-          },
+        filename: 'static/chunks/remoteEntry.js',
+        exposes: {
+          './welcome': './pages/index.tsx',
+          './2048': './pages/2048-game.tsx',
+          './snake': './pages/snake.tsx',
+          './tetris': './pages/tetris.tsx',
+          './tic-tac-toe': './pages/tick-tack-toe.tsx',
         },
       })
     );
