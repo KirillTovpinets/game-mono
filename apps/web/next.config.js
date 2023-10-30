@@ -34,7 +34,6 @@ module.exports = {
     config.plugins.push(
       new NextFederationPlugin({
         name: 'portfolio',
-        shareScope: 'global',
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           './welcome': './pages/index.tsx',
@@ -43,9 +42,10 @@ module.exports = {
           './tetris': './pages/tetris.tsx',
           './tic-tac-toe': './pages/tick-tack-toe.tsx',
         },
-        remoteType: 'var',
       })
     );
+
+    config.publicPath = '/';
 
     return config;
   },
