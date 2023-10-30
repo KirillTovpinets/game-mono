@@ -1,13 +1,13 @@
 'use client';
 import Game2048 from '2048-game';
-import type { FunctionComponent } from 'react';
+import type { ReactElement } from 'react';
 
-const Page: FunctionComponent = () => {
+function Page(): ReactElement {
   return (
     <div>
       <Game2048 />
     </div>
   );
-};
+}
 
 export default Page;

@@ -2,26 +2,19 @@ import {
   FlushedChunks,
   flushChunks,
   revalidate,
-} from "@module-federation/nextjs-mf/utils";
-import Document, {
-  DocumentContext,
-  DocumentInitialProps,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from "next/document";
+} from '@module-federation/nextjs-mf/utils';
+import type { DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 interface DocumentProps extends DocumentInitialProps {
-  chunks: any;
+  chunks: string[];
 }
 class MyDocument extends Document<DocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentProps> {
     if (
-      process.env.NODE_ENV === "development" &&
-      ctx.req &&
-      ctx.req.url &&
-      !ctx.req.url.includes("_next")
+      process.env.NODE_ENV === 'development' &&
+      ctx.req?.url &&
+      !ctx.req.url.includes('_next')
     ) {
       await revalidate().then((shouldReload) => {
         if (shouldReload) {
@@ -30,11 +23,13 @@ class MyDocument extends Document<DocumentProps> {
         }
       });
     } else {
-      ctx?.res?.on("finish", () => {
-        revalidate();
+      ctx.res?.on('finish', () => {
+        void revalidate();
       });
     }
-    const chunks = await flushChunks();
+    const typedFlush = flushChunks as () => Promise<string[]>;
+
+    const chunks = await typedFlush();
     const initialProps = await Document.getInitialProps(ctx);
 
     return { ...initialProps, chunks };

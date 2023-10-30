@@ -17,7 +17,8 @@
     "snake-game": "workspace:*",
     "tetris-game": "workspace:*",
     "tic-tac-toe": "workspace:*",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "utils": "link:@types/@module-federation/nextjs-mf/utils"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.19",
