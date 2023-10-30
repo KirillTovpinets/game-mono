@@ -34,9 +34,6 @@ module.exports = {
     config.plugins.push(
       new NextFederationPlugin({
         name: 'portfolio',
-        output: {
-          publicPath: 'auto',
-        },
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           './welcome': './pages/index.tsx',
