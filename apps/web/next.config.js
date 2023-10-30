@@ -45,7 +45,7 @@ module.exports = {
       })
     );
 
-    config.publicPath = '/';
+    options.publicPath = '/';
 
     return config;
   },
