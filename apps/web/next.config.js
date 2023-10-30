@@ -42,6 +42,7 @@ module.exports = {
           './tetris': './pages/tetris.tsx',
           './tic-tac-toe': './pages/tick-tack-toe.tsx',
         },
+        library: { type: 'var', name: 'portfolio' },
       })
     );
 
