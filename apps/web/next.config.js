@@ -52,6 +52,7 @@ module.exports = {
         },
       })
     );
+    config.output.publicPath = 'auto';
 
     return config;
   },
