@@ -42,8 +42,14 @@ module.exports = {
           './tetris': './pages/tetris.tsx',
           './tic-tac-toe': './pages/tick-tack-toe.tsx',
         },
-        shared: {}
-
+        shared: {},
+        extraOptions: {
+          debug: true, // `false` by default
+          exposePages: true, // `false` by default
+          enableImageLoaderFix: false, // `false` by default
+          enableUrlLoaderFix: true, // `false` by default
+          skipSharingNextInternals: true, // `false` by default
+        },
       })
     );
 
